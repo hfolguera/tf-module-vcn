@@ -96,8 +96,10 @@ sort:
 
 # see: https://terraform-docs.io/user-guide/configuration/settings
 settings:
+  anchor: true
   indent: 4
   escape: false
-  default: false
-  required: false
+  default: true
+  required: true
+  sensitive: true
   type: true
