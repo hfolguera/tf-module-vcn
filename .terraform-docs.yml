@@ -29,14 +29,17 @@ content: |-
   # Module
   {{ .Header }}
   {{ .Footer }}
+  This module deploy the following resources:
+  {{ .Resources }}
   {{ .Inputs }}
-  {{ .Modules }}
   {{ .Outputs }}
+  {{ .Modules }}
   {{ .Providers }}
   {{ .Requirements }}
-  {{ .Resources }}
   #### Module TAG: 
+  ```
   {{ include "version.json" }}
+  ```
 
 #   Any arbitrary text can be placed anywhere in the content
 #

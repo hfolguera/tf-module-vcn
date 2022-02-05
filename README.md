@@ -3,6 +3,12 @@
 # Module
 
 
+This module deploy the following resources:
+#### Resources
+
+| Name | Type |
+|------|------|
+| [oci_core_vcn.this](https://registry.terraform.io/providers/hashicorp/oci/4.44.0/docs/resources/core_vcn) | resource |
 #### Inputs
 
 | Name | Description | Type |
@@ -14,14 +20,14 @@
 | <a name="input_dns_label"></a> [dns_label](#input_dns_label) | A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) | `string` |
 | <a name="input_freeform_tags"></a> [freeform_tags](#input_freeform_tags) | Free-form tags for this resource | `map(any)` |
 | <a name="input_is_ipv6enabled"></a> [is_ipv6enabled](#input_is_ipv6enabled) | Whether IPv6 is enabled for the VCN | `bool` |
-#### Modules
-
-No modules.
 #### Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_vcn_id"></a> [vcn_id](#output_vcn_id) | OCID of created VCN. |
+#### Modules
+
+No modules.
 #### Providers
 
 | Name | Version |
@@ -33,15 +39,12 @@ No modules.
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >=1.0 |
 | <a name="requirement_oci"></a> [oci](#requirement_oci) | 4.44.0 |
-#### Resources
-
-| Name | Type |
-|------|------|
-| [oci_core_vcn.this](https://registry.terraform.io/providers/hashicorp/oci/4.44.0/docs/resources/core_vcn) | resource |
 #### Module TAG:
+```
 {
     "tf.plan.version": "1.0.0"
 }
+```
 
 This file has beed generated automatically with terraform-docs and its configuration file `.terraform-docs.yml`. Please don't edit it!
 <!-- END_TF_DOCS -->
