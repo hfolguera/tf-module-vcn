@@ -15,11 +15,10 @@ pipeline {
   stages {
     stage('Format') {
       steps {
-        sh 'find / -name terraform'
         sh 'pwd'
         sh 'ls -lh'
         sh 'echo $PATH'
-        sh 'terraform fmt'
+        sh '/bin/terraform fmt'
       }
     }
   }
