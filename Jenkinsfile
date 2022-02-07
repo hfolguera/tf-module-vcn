@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    label 'terragrunt'
+  }
 
   environment {
     tenancy_ocid          = credentials('tenancy_ocid')
