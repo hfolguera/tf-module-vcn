@@ -15,9 +15,11 @@ pipeline {
   stages {
     stage('Format') {
       steps {
+        sh 'id'
         sh 'pwd'
         sh 'ls -lh'
         sh 'echo $PATH'
+        sh 'ls -l /bin/terraform'
         sh '/bin/terraform fmt'
       }
     }
