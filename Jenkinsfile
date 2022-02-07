@@ -1,9 +1,6 @@
 pipeline {
   agent any
 
-  parameters {
-  }
-
   environment {
     tenancy_ocid          = credentials('tenancy_ocid')
     user_ocid             = credentials('user_ocid')
