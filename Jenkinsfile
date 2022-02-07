@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'terragrunt'
+    label 'terraform'
   }
 
   environment {
