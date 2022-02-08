@@ -36,8 +36,9 @@ pipeline {
           echo "${version}"
           echo "${version.key}"
           echo "${version.value}"
+          echo "${version.version}"
         }
-        sh 'git tag -a "${version.tf.plan.version}" -m "Automatic CI/CD tag"'
+        sh 'git tag -a "${version}" -m "Automatic CI/CD tag"'
         sh 'git push --tags'
       }
     }
