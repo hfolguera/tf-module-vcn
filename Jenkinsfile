@@ -36,7 +36,7 @@ pipeline {
           TagVersion = JsonFile.version
         }
         sh 'git config -l'
-        sh "git tag -a ${TagVersion} -m 'Automatic CI/CD tag'"
+        sh "git tag -a ${TagVersion} -m 'Automatic CI/CD tag' -f"
         sh 'git push --tags'
       }
     }
