@@ -62,7 +62,7 @@ pipeline {
         sh "git config --local user.name 'Jenkins'"
         sh "git config --local user.email 'jenkins@localhost'"
         sh 'git config -l'
-        sh "git tag -a ${TagVersion} -m 'Automatic CI/CD tag' -f"
+        sh "git tag -a ${TagVersion} -m 'Automatic CI/CD tag'"
         sshagent (credentials: ['git-credentials']) {
           sh 'git push --tags'
         }
