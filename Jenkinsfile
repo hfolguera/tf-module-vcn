@@ -30,9 +30,6 @@ pipeline {
     }
 
     stage('Tag') {
-      environtment {
-        TagVersion = "test"
-      }
       steps {
         script {
           JsonFile = readJSON file: 'version.json'
