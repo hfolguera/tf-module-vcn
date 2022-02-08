@@ -33,9 +33,9 @@ pipeline {
       steps {
         script {
           version = readJSON file: 'version.json'
-          echo "${version}"
+          echo "${version.tf.plan.version}"
         }
-        sh 'git tag -a $version -m "Automatic CI/CD tag"'
+        sh 'git tag -a "${version.tf.plan.version}" -m "Automatic CI/CD tag"'
         sh 'git push --tags'
       }
     }
