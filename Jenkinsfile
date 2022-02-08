@@ -20,7 +20,7 @@ pipeline {
         sh 'ls -lh'
         sh 'echo $PATH'
         sh 'ls -l /bin/'
-        sh 'terraform fmt'
+        sh '/var/jenkins_home/terraform_temp/terraform fmt'
       }
     }
   }
