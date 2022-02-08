@@ -25,7 +25,7 @@ pipeline {
 
     stage('Format') {
       steps {
-        sh '/var/jenkins_home/terraform_temp/terraform fmt -recursive -check'
+        sh '/var/jenkins_home/terraform_temp/terraform fmt -recursive -check -diff'
       }
     }
   }
