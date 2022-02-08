@@ -30,13 +30,17 @@ pipeline {
     }
 
     stage('Tag') {
+      environtment {
+        TagVersion = "test"
+      }
       steps {
         script {
           JsonFile = readJSON file: 'version.json'
+          TagVersion = JsonFile.version
           echo "${JsonFile}"
-          echo "${JsonFile.version}"
+          echo "${TagVersion}"
         }
-        sh 'git tag -a ${JsonFile.version} -m "Automatic CI/CD tag"'
+        sh 'git tag -a ${TagVersion} -m "Automatic CI/CD tag"'
         sh 'git push --tags'
       }
     }
