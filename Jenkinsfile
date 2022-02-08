@@ -31,12 +31,10 @@ pipeline {
 
     stage('Tag') {
       steps {
-        script {
-          def version = readJSON file: 'version.json'
-          echo "${version}"
-          git tag -a $version -m "Automatic CI/CD tag"
-          git push --tags
-        }
+        def version = readJSON file: 'version.json'
+        sh 'echo "${version}"'
+        sh 'git tag -a $version -m "Automatic CI/CD tag"'
+        sh 'git push --tags'
       }
     }
   }
