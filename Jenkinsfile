@@ -39,7 +39,7 @@ pipeline {
           echo "${JsonFile}"
           echo "${TagVersion}"
         }
-        sh 'git tag -a ${TagVersion} -m "Automatic CI/CD tag"'
+        sh "git tag -a ${TagVersion} -m 'Automatic CI/CD tag'"
         sh 'git push --tags'
       }
     }
