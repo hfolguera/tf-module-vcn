@@ -8,8 +8,6 @@ pipeline {
     private_key           = credentials('private_key')
     AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-
-    TagVersion            = "test"
   }
 
   stages {
@@ -36,9 +34,8 @@ pipeline {
         script {
           JsonFile = readJSON file: 'version.json'
           TagVersion = JsonFile.version
-          echo "${JsonFile}"
-          echo "${TagVersion}"
         }
+        sh 'git config -l'
         sh "git tag -a ${TagVersion} -m 'Automatic CI/CD tag'"
         sh 'git push --tags'
       }
