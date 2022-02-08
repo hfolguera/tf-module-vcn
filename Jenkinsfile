@@ -11,14 +11,21 @@ pipeline {
   }
 
   stages {
+    stage('Init') {
+      steps {
+        sh '/var/jenkins_home/terraform_temp/terraform init'
+      }
+    }
+
+    stage('Validate') {
+      steps {
+        sh '/var/jenkins_home/terraform_temp/terraform validate'
+      }
+    }
+
     stage('Format') {
       steps {
-        sh 'id'
-        sh 'pwd'
-        sh 'ls -lh'
-        sh 'echo $PATH'
-        sh 'ls -l /bin/'
-        sh '/var/jenkins_home/terraform_temp/terraform fmt'
+        sh '/var/jenkins_home/terraform_temp/terraform fmt -recursive -check'
       }
     }
   }
