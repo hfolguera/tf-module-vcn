@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'terraform'
-  }
+  agent any
 
   environment {
     tenancy_ocid          = credentials('tenancy_ocid')
