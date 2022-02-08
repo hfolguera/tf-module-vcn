@@ -1,6 +1,6 @@
 resource "oci_core_vcn" "this" {
   #Required
-      compartment_id = var.compartment_id
+  compartment_id = var.compartment_id
 
   #Optional
   cidr_blocks    = var.cidr_blocks
