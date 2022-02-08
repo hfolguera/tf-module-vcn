@@ -20,7 +20,7 @@ pipeline {
         sh 'ls -lh'
         sh 'echo $PATH'
         sh 'ls -l /bin/'
-        sh '/bin/terraform fmt'
+        sh 'terraform fmt'
       }
     }
   }
