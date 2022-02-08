@@ -31,8 +31,10 @@ pipeline {
 
     stage('Tag') {
       steps {
-        version = readJSON file: 'version.json'
-        sh 'echo "${version}"'
+        script {
+          version = readJSON file: 'version.json'
+          echo "${version}"
+        }
         sh 'git tag -a $version -m "Automatic CI/CD tag"'
         sh 'git push --tags'
       }
