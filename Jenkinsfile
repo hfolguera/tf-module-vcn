@@ -16,7 +16,7 @@ pipeline {
     - git Credentials created
   */
   agent {
-    label 'terraform2'
+    label 'terraformtest'
   }
 
   /*
@@ -34,19 +34,19 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        sh '/var/jenkins_home/terraform_temp/terraform init'
+        sh 'terraform init'
       }
     }
 
     stage('Validate') {
       steps {
-        sh '/var/jenkins_home/terraform_temp/terraform validate'
+        sh 'terraform validate'
       }
     }
 
     stage('Format') {
       steps {
-        sh '/var/jenkins_home/terraform_temp/terraform fmt -recursive -check -diff'
+        sh 'terraform fmt -recursive -check -diff'
       }
     }
 
