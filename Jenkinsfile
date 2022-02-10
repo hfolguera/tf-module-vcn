@@ -36,7 +36,7 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        continer('terraform') {
+        container('terraform') {
           sh 'terraform init'
         }
       }
@@ -44,7 +44,7 @@ pipeline {
 
     stage('Validate') {
       steps {
-        continer('terraform') {
+        container('terraform') {
           sh 'terraform validate'
         }
       }
@@ -52,7 +52,7 @@ pipeline {
 
     stage('Format') {
       steps {
-        continer('terraform') {
+        container('terraform') {
           sh 'terraform fmt -recursive -check -diff'
         }
       }
