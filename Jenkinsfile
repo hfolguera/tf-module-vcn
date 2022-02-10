@@ -16,7 +16,7 @@ pipeline {
     - git Credentials created
   */
   agent {
-    label 'terraform'
+    label 'terraformtest'
   }
 
   /*
