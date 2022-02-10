@@ -36,19 +36,25 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        sh 'terraform init'
+        continer('terraform') {
+          sh 'terraform init'
+        }
       }
     }
 
     stage('Validate') {
       steps {
-        sh 'terraform validate'
+        continer('terraform') {
+          sh 'terraform validate'
+        }
       }
     }
 
     stage('Format') {
       steps {
-        sh 'terraform fmt -recursive -check -diff'
+        continer('terraform') {
+          sh 'terraform fmt -recursive -check -diff'
+        }
       }
     }
 
