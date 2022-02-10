@@ -16,7 +16,7 @@ pipeline {
     - git Credentials created
   */
   agent {
-    #label 'terraformtest'
+    //label 'terraformtest'
     kubernetes {
       label 'terraformtest'
       defaultContainer 'terraform'
