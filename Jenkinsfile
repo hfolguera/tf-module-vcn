@@ -16,7 +16,11 @@ pipeline {
     - git Credentials created
   */
   agent {
-    label 'terraformtest'
+    #label 'terraformtest'
+    kubernetes {
+      label 'terraformtest'
+      defaultContainer 'terraform'
+    }
   }
 
   /*
@@ -36,25 +40,19 @@ pipeline {
   stages {
     stage('Init') {
       steps {
-        container('terraform') {
-          sh 'terraform init'
-        }
+        sh 'terraform init'
       }
     }
 
     stage('Validate') {
       steps {
-        container('terraform') {
-          sh 'terraform validate'
-        }
+        sh 'terraform validate'
       }
     }
 
     stage('Format') {
       steps {
-        container('terraform') {
-          sh 'terraform fmt -recursive -check -diff'
-        }
+        sh 'terraform fmt -recursive -check -diff'
       }
     }
 
