@@ -16,7 +16,7 @@ pipeline {
     - git Credentials created
   */
   agent {
-    label 'terraform'
+    label 'terraformtest'
   }
 
   /*
@@ -56,6 +56,9 @@ pipeline {
       If previous validations are successfull, the module is tagged with the contents of version.json file
     */
     stage('Tag') {
+      when {
+        branch "master"
+      }
       steps {
         script {
           JsonFile = readJSON file: 'version.json'
